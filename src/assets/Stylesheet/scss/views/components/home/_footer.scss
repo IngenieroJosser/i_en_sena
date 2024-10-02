@@ -1,0 +1,40 @@
+@import '../../../settings/variables';
+
+.footer {
+    background-color: $color-primario;
+    color: #ffffff;
+    padding: 1.5rem 0;
+    text-align: center;
+
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+    
+        p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #ffffff;
+        }
+    
+        .social-media {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+    
+            li {
+                a {
+                    color: #ffffff;
+                    text-decoration: none;
+                    transition: color 0.3s ease;
+                    font-weight: bold;
+        
+                    &:hover {
+                        color: #fefae0;
+                    }
+                }
+            }
+        }
+    }
+}

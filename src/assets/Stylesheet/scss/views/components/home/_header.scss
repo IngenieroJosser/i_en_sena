@@ -1,0 +1,142 @@
+@import '../../../settings/base';
+@import '../../../settings/mixins';
+
+// Tema claro por defecto
+:root {
+    --bg-color: #F9F9F9;
+    --text-color: #000000;
+    --primary-color: $color-primario;
+    --secondary-color: #F9F9F9;
+}
+
+// Tema oscuro
+[data-theme='dark'] {
+    --bg-color: #101820;
+    --text-color: #FFFFFF;
+    --primary-color: #FF7300;
+    --secondary-color: #101820;
+}
+
+// Aplicar tema global al body y elementos principales
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color); // Esto debería cambiar según el tema
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    @include flex-direction(row);
+    padding: 1rem 2rem;
+    justify-content: space-between;
+    position: relative;
+    background-color: var(--secondary-color);
+
+    .settings-header {
+        @include flex-direction(row);
+        @include flex-gap(1rem);
+        color: var(--text-color);
+
+        img {
+            margin-top: 1.5em;
+            width: 1.5em;
+            height: 1.5em;
+            object-fit: contain;
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    img {
+        width: 10em;
+        height: 5em;
+        object-fit: contain;
+    }
+
+    .menu-toggle {
+        display: none; // Ocultar el toggle en pantallas grandes
+        flex-direction: column;
+        justify-content: center;
+        cursor: pointer;
+
+        .bar {
+            width: 2rem;
+            height: 0.2rem;
+            background-color: var(--text-color);
+            margin: 0.3rem 0;
+            transition: all 0.3s ease;
+
+            &.open {
+                transform: rotate(45deg);
+                background-color: var(--text-color);
+                &:nth-of-type(2) {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+
+        ul {
+            @include flex-direction(row);
+            @include flex-gap(1rem);
+            
+            .btn {
+                text-decoration: none;
+                color: var(--text-color);
+
+                li {
+                    list-style: none;
+                    transition: all 0.2s ease-in-out;
+
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+    }
+
+    // Media query para móviles
+    @media (max-width: 600px) {
+        .menu-toggle {
+            display: flex;
+        }
+
+        nav {
+            display: none; // Ocultar el menú en pantallas pequeñas por defecto
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: var(--secondary-color);
+            padding: 1rem;
+            z-index: 1000;
+
+            &.open {
+                display: block;
+            }
+
+            ul {
+                @include flex-direction(column);
+                @include flex-gap(1rem);
+                padding: 0;
+                
+                .btn {
+                    li {
+                        font-size: 1rem;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,76 @@
+@import '../settings/variables';
+
+
+.error-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 2rem;
+
+    h1 {
+        font-size: 6rem;
+        margin: 0;
+        color: var(--primary-color);
+        font-weight: bold;
+    }
+
+    p {
+        font-size: 1.5rem;
+        margin-top: 1rem;
+        color: var(--text-color);
+    }
+
+    .link {
+        margin-top: 2rem;
+        font-size: 1rem;
+        color: var(--primary-color);
+        text-decoration: none;
+        border: 1px solid var(--primary-color);
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: var(--primary-color);
+            color: var(--bg-color);
+            cursor: pointer;
+        }
+    }
+}
+
+// Media queries para pantallas más pequeñas
+@media (max-width: 768px) {
+    h1 {
+        font-size: 4rem;  // Tamaño del texto más pequeño para tablets
+    }
+
+    p {
+        font-size: 1.25rem;  // Tamaño del texto más pequeño para tablets
+    }
+
+    .link {
+        font-size: 0.875rem;  // Tamaño del texto del botón más pequeño
+        padding: 0.4rem 0.8rem;  // Espaciado más pequeño en el botón
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 3rem;  // Tamaño del texto más pequeño para móviles
+    }
+
+    p {
+        font-size: 1rem;  // Tamaño del texto más pequeño para móviles
+    }
+
+    .link {
+        font-size: 0.75rem;  // Tamaño del texto del botón más pequeño para móviles
+        padding: 0.3rem 0.6rem;  // Espaciado más pequeño en el botón
+    }
+}
+

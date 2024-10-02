@@ -1,0 +1,36 @@
+@import './variables';
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('../../../fonts/Nunito-Light.ttf');
+}
+@font-face {
+    font-family: 'Ichiji';
+    src: url('../../../fonts/Ichiji-Two.otf');
+}
+
+
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6 {
+    font-family: 'Ichiji';
+    color: #000;
+}
+
+p, span, a, li, select, option, input, label, button {
+    font-family: 'Nunito';
+    color: #000;
+}
+
+body {
+    background-color: $bg;
+}

@@ -1,0 +1,45 @@
+@import '../../../settings/base';
+@import '../../../settings/variables';
+@import '../../../settings/mixins';
+
+.flex-img {
+    background-image: url('../../../../../img/decoracion1.png');
+    @include flex-gap(1em);
+    justify-content: center;
+    margin-top: 7em;
+    display: flex; /* Aseguramos que sea un contenedor flex */
+    flex-wrap: wrap; /* Permite que las imágenes se envuelvan en múltiples líneas */
+
+    img {
+        width: 199px; /* Ancho base de las imágenes */
+        height: 199px; /* Altura base de las imágenes */
+        object-fit: contain; /* Mantiene la proporción de las imágenes */
+        transition: all .1s ease; /* Transición suave para hover */
+        filter: brightness(.6); /* Filtro de brillo inicial */
+        margin-bottom: 1em; /* Margen inferior para separación entre filas */
+        
+        &:hover {
+            content: 'Imagen...'; /* Mensaje en hover */
+            width: 199px; /* Mantiene el mismo ancho en hover */
+            margin-top: -1.7em; /* Eleva la imagen al hacer hover */
+            flex: 3; /* Aumenta el tamaño de la imagen en hover */
+            filter: brightness(1); /* Aumenta el brillo en hover */
+            z-index: 999; /* Asegura que la imagen esté encima */
+        }
+    }
+
+    /* Estilos responsivos */
+    @media (max-width: 768px) {
+        img {
+            width: 150px; /* Reduce el tamaño en pantallas medianas */
+            height: 150px; /* Mantiene la altura proporcional */
+        }
+    }
+
+    @media (max-width: 480px) {
+        img {
+            width: 120px; /* Reduce aún más el tamaño en pantallas pequeñas */
+            height: 120px; /* Mantiene la altura proporcional */
+        }
+    }
+}

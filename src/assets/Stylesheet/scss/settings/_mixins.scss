@@ -1,0 +1,77 @@
+// Centrar un div (contenido)
+@mixin center-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin responsive-text($min-size, $max-size) {
+    font-size: $min-size;
+
+    @media (min-width: 768px) {
+      font-size: calc(#{$min-size} + #{$max-size - $min-size} * ((100vw - 768px) / (1200 - 768)));
+    }
+
+    @media (min-width: 1200px) {
+        font-size: $max-size;
+    }
+}
+
+@mixin box-shadow($x, $y, $blur, $color) {
+    box-shadow: $x $y $blur $color;
+}
+
+@mixin rounded($radius: 5px, $specific-borders: null) {
+    @if $specific-borders == null {
+        border-radius: $radius;
+    } @else {
+        border-#{$specific-borders}-radius: $radius;
+    }
+}
+
+/*
+    .button {
+  @include rounded(10px); // Aplica el radio a todos los bordes
+}
+
+.card {
+  @include rounded(15px, 'top-left'); // Aplica el radio solo a la esquina superior izquierda
+}
+
+*/
+
+@mixin flex-gap ($gap) {
+    display: flex;
+    gap: $gap;
+}
+
+@mixin border-bottom ($px, $color) {
+    border-bottom: $px solid $color;
+}
+@mixin border-top ($px, $color) {
+    border-top: $px solid $color;
+}
+@mixin border-left ($px, $color) {
+    border-left: $px solid $color;
+}
+@mixin border-right ($px, $color) {
+    border-right: $px solid $color;
+}
+@mixin border ($px, $color) {
+    border: $px solid $color;
+}
+
+@mixin flex-direction($direction) {
+    display: flex;
+    flex-direction: $direction;
+}
+
+@mixin button-style($background-color, $hover-color) {
+    background-color: $background-color;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}

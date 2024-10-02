@@ -1,0 +1,46 @@
+@import '../../../settings/variables';
+
+.faq {
+    padding: 2rem;
+    background-color: #f8f9fa;
+    margin-top: 5em;
+
+    h2 {
+        font-size: 2rem;
+        color: $color-primario;
+        margin-bottom: 1.5rem;
+        text-align: center;
+
+        h1 {
+            color: $color-tercero;
+        }
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+
+        li {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+    
+            &:hover {
+                box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+            }
+    
+            strong {
+                font-size: 1.2rem;
+                color: $color-primario;
+            }
+    
+            p {
+                font-size: 1rem;
+                margin-top: 0.5rem;
+            }
+        }
+    }
+}

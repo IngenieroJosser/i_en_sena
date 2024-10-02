@@ -1,0 +1,52 @@
+@import '../../../settings/variables';
+
+.courses {
+    padding: 2rem;
+    background-color: #f8f9fa;
+    margin-top: 20.5em;
+
+    h2 {
+        font-size: 2rem;
+        color: $color-tercero;
+        margin-bottom: 1.5rem;
+        text-align: center;
+
+        h1 {
+            color: $color-primario;
+        }
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        gap: 1.5rem;
+        justify-content: center;
+
+        li {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+            width: 23em;
+            height: auto;
+    
+            &:hover {
+                box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+            }
+    
+            h3 {
+                font-size: 1.5rem;
+                color: $color-primario;
+                margin-bottom: 0.5rem;
+            }
+    
+            p {
+                font-size: 1rem;
+                color: $color-tercero;
+                font-weight: bold;
+            }
+        }
+    }
+}
